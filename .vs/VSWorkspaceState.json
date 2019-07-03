@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\event-thumbnail",
+    "\\src\\assets\\images"
+  ],
+  "SelectedNode": "\\src\\app\\event-thumbnail\\event-thumbnail.component.ts",
+  "PreviewInSolutionExplorer": false
+}
