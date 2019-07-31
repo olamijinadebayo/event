@@ -1,0 +1,12 @@
+.green{
+    color: #003300 !important;
+}
+.thumbnail{
+    min-height: 210px;
+}
+.pad-left {
+    margin-left: 10px;
+}
+.bold{
+    font-weight: bolder;
+}

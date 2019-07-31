@@ -7,20 +7,29 @@
 <div class="row">
   <div class="col-md-6">
     <div><strong>Date:</strong> {{event?.date}}</div>
-    <div><strong>Time:</strong> {{event?.time}}</div>
+    <div [ngClass]="getStartTimeClass()" [ngSwitch] = "event?.time">
+      <strong>Time:</strong> {{event?.time}}
+      <span *ngSwitchCase=" '8:00 am' ">(Early Start)</span>
+      <span *ngSwitchCase=" '10:00 am' ">(Late Start)</span>
+      <span *ngSwitchDefault>(Normal Start)</span>
+    </div>
+
     <div><strong>Price:</strong> ${{event?.price}}</div>
   </div>
-  <div class="col-md-6">
+  <div [hidden] = "!event?.location" class="col-md-6">
     <address>
       <strong>Address:</strong><br />
       {{event?.location?.address}}<br />
       {{event?.location?.city}}, {{event?.location?.country}}
     </address>
   </div>
+  <div *ngIf = "event?.onlineUrl">
+    Online URL: {{event?.onlineUrl}}
+  </div>
+
   <div>
     <button (click)="handleClickMe()">click
 
     </button>
   </div>
 </div>
-ng

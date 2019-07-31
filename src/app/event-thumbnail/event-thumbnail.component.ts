@@ -6,21 +6,13 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
   styleUrls: ['./event-thumbnail.component.css']
 })
 export class EventThumbnailComponent implements OnInit {
-    @Input() event1[]: any;
+    @Input() event: any;
     @Output() eventClick = new EventEmitter();
 
-    //evente1 = 'test';
-  
-
-
-    handleClickMe() {
-        this.eventClick.emit(this.event.price);
-    }
-
-    log(){
-      console.log('foo');
-    }
-
+   getStartTimeClass(){
+     const isEarlyStart = this.event && this.event.time === '8:00 am'
+     return {green: isEarlyStart, bold: isEarlyStart}
+   }
   constructor() { }
 
   ngOnInit() {
