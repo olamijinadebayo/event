@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService } from '../event.service';
+import { EventService } from '../../event.service';
 
 import { ToastrService } from 'ngx-toastr';
 import {ActivatedRoute} from '@angular/router';
