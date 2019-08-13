@@ -6,7 +6,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component'
 import { NavbarComponent } from './navbar/navbar.component';
-import { EventService } from './events/shared/event.service';
 import { ErrorComponent } from './error/error.component';
 import { EventRouteActivatorService } from './events/shared/event-route-activator.service';
 import { EventsListResolverService } from './events/shared/events-list-resolver.service';
@@ -18,8 +17,11 @@ import {
   CreateSessionComponent,
   SessionListComponent
 } from './events/index';
+import { DurationPipe, EventService} from './events/shared/index';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+import { from } from 'rxjs';
 
 
 
@@ -34,6 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ErrorComponent,
     CreateSessionComponent,
     SessionListComponent,
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,

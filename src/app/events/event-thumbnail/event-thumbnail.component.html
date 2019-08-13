@@ -5,7 +5,7 @@
     
     <div class="row">
       <div class="col-md-6">
-        <div><strong>Date:</strong> {{ event?.date }}</div>
+        <div><strong>Date:</strong> {{ event?.date | date: 'shortDate' }}</div>
         <div [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time">
           <strong>Time:</strong> {{ event?.time }}
           <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
@@ -13,7 +13,7 @@
           <span *ngSwitchDefault>(Normal Start)</span>
         </div>
     
-        <div><strong>Price:</strong> ${{ event?.price }}</div>
+        <div><strong>Price:</strong> {{ event?.price | currency:'USD'}}</div>
       </div>
       <div [hidden]="!event?.location" class="col-md-6">
         <address>
