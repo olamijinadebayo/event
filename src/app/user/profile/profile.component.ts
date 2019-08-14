@@ -29,13 +29,13 @@ export class ProfileComponent implements OnInit {
       this.router.navigate(['events']);
     }
   }
-   cancel(){
+   cancel() {
      this.router.navigate(['events']);
    }
-   validateFirstName(){
-    return this.firstName.invalid || this.firstName.touched;
+   validateFirstName() {
+    return this.firstName.invalid || this.firstName.untouched;
    }
-   validateLastName(){
-    return this.lastName.invalid || this.lastName.touched;
+   validateLastName() {
+    return this.lastName.invalid || this.lastName.untouched;
    }
 }

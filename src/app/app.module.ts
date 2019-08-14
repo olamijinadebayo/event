@@ -20,10 +20,11 @@ import {
 import { DurationPipe, EventService} from './events/shared/index';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { from } from 'rxjs';
+import { JQ_TOKEN, CollapsibleWellComponent} from './common/index';
+import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 
-
+let jQuery = window['$'];
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { from } from 'rxjs';
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   imports: [
     BrowserModule,
