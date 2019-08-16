@@ -15,7 +15,8 @@ import {
   EventThumbnailComponent,
   EventsListComponent,
   CreateSessionComponent,
-  SessionListComponent
+  SessionListComponent,
+  UpvoteComponent
 } from './events/index';
 import { DurationPipe, EventService} from './events/shared/index';
 import { AuthService } from './user/auth.service';
@@ -41,7 +42,8 @@ const jQuery = window['$'];
     CollapsibleWellComponent,
     SimpleModalComponent,
     ModalTriggerDirective,
-    DurationPipe
+    DurationPipe,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
