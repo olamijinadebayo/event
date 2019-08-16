@@ -23,8 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { JQ_TOKEN, CollapsibleWellComponent} from './common/index';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
+import { ModalTriggerDirective } from './common/modal-trigger.directive';
 
-let jQuery = window['$'];
+const jQuery = window['$'];
 
 @NgModule({
   declarations: [
@@ -38,8 +39,9 @@ let jQuery = window['$'];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ let jQuery = window['$'];
   ],
   providers: [
     EventService,
+    { provide: JQ_TOKEN, useValue: jQuery },
     EventsListResolverService,
     EventRouteActivatorService,
     {
