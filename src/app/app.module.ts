@@ -26,6 +26,7 @@ import { JQ_TOKEN, CollapsibleWellComponent} from './common/index';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 import { ModalTriggerDirective } from './common/modal-trigger.directive';
 
+
 const jQuery = window['$'];
 
 @NgModule({
@@ -43,7 +44,7 @@ const jQuery = window['$'];
     SimpleModalComponent,
     ModalTriggerDirective,
     DurationPipe,
-    UpvoteComponent
+    UpvoteComponent,
   ],
   imports: [
     BrowserModule,
