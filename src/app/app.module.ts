@@ -16,7 +16,8 @@ import {
   EventsListComponent,
   CreateSessionComponent,
   SessionListComponent,
-  UpvoteComponent
+  UpvoteComponent,
+  LocationValidator
 } from './events/index';
 import { DurationPipe, EventService} from './events/shared/index';
 import { AuthService } from './user/auth.service';
@@ -25,7 +26,6 @@ import { from } from 'rxjs';
 import { JQ_TOKEN, CollapsibleWellComponent} from './common/index';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 import { ModalTriggerDirective } from './common/modal-trigger.directive';
-
 
 const jQuery = window['$'];
 
@@ -45,6 +45,7 @@ const jQuery = window['$'];
     ModalTriggerDirective,
     DurationPipe,
     UpvoteComponent,
+    LocationValidator,
   ],
   imports: [
     BrowserModule,
