@@ -7,15 +7,15 @@ import {
   CreateSessionComponent
 } from './events/index';
 import {ErrorComponent} from './error/error.component';
-import { EventRouteActivatorService } from './events/shared/event-route-activator.service';
 import { EventsListResolverService } from './events/shared/events-list-resolver.service';
+import { EventResolverService } from './events/shared/event-resolver.service';
 
 const routes: Routes = [
   {path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
   {path: 'events/session/new', component: CreateSessionComponent},
   {path: 'events', component: EventsListComponent, resolve: {events: EventsListResolverService}},
   {path: '404', component: ErrorComponent},
-  {path: 'events/:id', component: EventDetailsComponent , canActivate: [EventRouteActivatorService]},
+  {path: 'events/:id', component: EventDetailsComponent , resolve: {event: EventResolverService}},
   { path: '', redirectTo: '/events', pathMatch: 'full'},
   {path: 'user', loadChildren: './user/user.module#UserModule'}
 ];

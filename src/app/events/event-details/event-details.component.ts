@@ -22,10 +22,11 @@ export class EventDetailsComponent implements OnInit {
   //  this.event =  this.eventService.getEvent(
   //    +this.route.snapshot.params.id);
 
-   this .route.params.forEach((params: Params) => {
-       this.event = this.eventService.getEvent(+params['id']);
-       this.addMode = false;// reset the state
-     });
+   this .route.data.forEach((data) => {
+        // tslint:disable-next-line: no-string-literal
+        this.event = data['event'];
+        this.addMode = false; // reset the state
+      });
   }
 
   addSession(){

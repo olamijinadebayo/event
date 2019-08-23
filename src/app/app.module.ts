@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component'
 import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorComponent } from './error/error.component';
-import { EventRouteActivatorService } from './events/shared/event-route-activator.service';
 import { EventsListResolverService } from './events/shared/events-list-resolver.service';
 import {
   CreateEventComponent,
@@ -26,6 +25,7 @@ import { from } from 'rxjs';
 import { JQ_TOKEN, CollapsibleWellComponent} from './common/index';
 import { SimpleModalComponent } from './common/simple-modal/simple-modal.component';
 import { ModalTriggerDirective } from './common/modal-trigger.directive';
+import { EventResolverService } from './events/shared/event-resolver.service';
 
 const jQuery = window['$'];
 
@@ -53,18 +53,19 @@ const jQuery = window['$'];
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ToastrModule.forRoot()
   ],
   providers: [
     EventService,
     { provide: JQ_TOKEN, useValue: jQuery },
     EventsListResolverService,
-    EventRouteActivatorService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
     },
-    AuthService
+    AuthService,
+    EventResolverService
   ],
   bootstrap: [AppComponent]
 })
